@@ -56,7 +56,7 @@ public final class Const
 	public static final String JSON_MESSAGE = "message";
     /** fundamental info */
 	public static final String TAG_SYS = "sys";
-    /** main message*/
+    /** main message dao*/
 	public static final String TAG_MST = "mst";
     /** message queue*/
 	public static final String TAG_MQ = "mq";
@@ -89,5 +89,7 @@ public final class Const
 
 	/** 请求属性键值：当前角色名称  Request Current Role Code*/
 	public static final String REQ_CUR_ROLE_CODE = "CUR_ROLE_CODE";
+	
+	public static final String SYS_INIT = "SYS_INIT";
 
 }
