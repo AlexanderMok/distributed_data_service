@@ -1,5 +1,7 @@
 package elxsoft.system.facade;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -9,9 +11,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
+import com.alibaba.fastjson.JSONObject;
 
 import elxsoft.system.entity.SysUser;
-
 
 /**
  * 
@@ -19,6 +21,7 @@ import elxsoft.system.entity.SysUser;
  * <B>模块名称(Module)：</B><BR>
  * <B>中文类名(Name)：</B><BR>
  * <B>概要说明(Description)：</B>Define interface and REST access method<BR>
+ * 
  * @author Alex
  */
 @Path("/sysUserService")
@@ -27,6 +30,20 @@ import elxsoft.system.entity.SysUser;
 public interface SysUserFacade
 {
 
+	@POST
+	public String generateKey() throws Exception;
+
+	@GET
+	@Path("/getById/{id}")
+	public JSONObject getById(@PathParam(value = "id") String id) throws Exception;
+
+	@POST
+	@Path("/getList")
+	public List<JSONObject> getList() throws Exception;
+
+	@POST
+	public int insert(JSONObject jsonObject) throws Exception;
+    
 	@GET
 	@Path("/testget")
 	public void testget();
